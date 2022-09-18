@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@prettier/plugin-php": "^0.19.1",
+        "dayjs": "^1.11.5",
         "prettier": "^2.7.1"
     }
 }

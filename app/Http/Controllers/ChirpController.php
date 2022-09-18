@@ -11,11 +11,15 @@ class ChirpController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        return Inertia::render('Chirps/Index', []);
+        return Inertia::render('Chirps/Index', [
+            'chirps' => Chirp::with('user:id,name')
+                ->latest()
+                ->get(),
+        ]);
     }
 
     /**
